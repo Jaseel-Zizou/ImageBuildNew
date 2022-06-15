@@ -1,0 +1,27 @@
+.chapter {
+   display: flex;
+   flex-direction: column;
+   margin-top: 2%;
+   color: blue;
+   /* margin-bottom: 1%; */
+}
+
+.sub {
+   display: flex;
+   flex-direction: column;
+   margin-top: 2%;
+   /* margin-bottom: 1%; */
+}
+
+.topicref {
+   float: left;
+   width: 100%;
+}
+
+.chapter ul:nth-child(1) {
+   margin-top: 1%;
+}
+
+.topictitle1 {
+   margin-bottom: 3%;
+}

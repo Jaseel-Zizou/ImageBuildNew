@@ -1,0 +1,7 @@
+deployment:
+  name: lmsdashboarddeployment
+  image: gcr.io/gcp-customer-success-1/lms-dashboard-latest/b9e65eb364b2@sha256:eda423eb3c9caea23065ed6a6af46f7fed2a198470b09805482228e5882e20fc
+  ip_address: 34.66.164.22
+  container_port: 3176
+  http_port: 80
+  https_port: 443

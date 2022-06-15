@@ -1,0 +1,83 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.mainDiv {
+   width: 100vw;
+   height: 75vh;
+   display: flex;
+   flex-direction: row;
+}
+
+.leftContainer {
+   flex: 1;
+   float: left;
+   width: 45vw;
+   height: 75vh;
+   max-height: 75vh;
+   border: 1px solid grey;
+   margin-right: 2vh;
+}
+
+.leftTopContainer {
+   width: 100%;
+   height: 75vh;
+   max-height: 75vh;
+   border: 1px solid grey;
+   margin-right: 2%;
+   padding: 5%;
+   /* display: flex; */
+   align-items: center;
+   justify-content: center;
+}
+
+.rightContainer {
+   flex: 1;
+   float: right;
+   width: 44%;
+   height: 75vh;
+   max-height: 75vh;
+   border: 1px solid grey;
+   margin-right: 2%
+}
+
+.leftBottomContainer {
+   float: bottom;
+   width: 100%;
+   height: 38vh;
+   max-height: 38vh;
+   /* border: 1px solid grey; */
+   margin-right: 2%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.container {
+   margin: auto;
+   text-align: center;
+   position: relative;
+   height: 100%;
+}
+
+.loading {
+   margin: 0;
+   position: absolute;
+   margin-top: 10vh;
+   -ms-transform: translateY(-50%);
+   transform: translateY(-50%);
+   ;
+   font-size: 20px;
+   width: 100%;
+}
+
+.error {
+   color: #501212;
+}
+
+.accessLabButton {
+   align-items: center;
+   justify-content: center;
+   margin-top: 40vh
+}

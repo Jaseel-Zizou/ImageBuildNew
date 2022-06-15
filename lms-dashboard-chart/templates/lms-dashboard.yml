@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Values.deployment.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deployment.name }}
+    spec:
+      containers:
+      - image: {{ .Values.deployment.image }}
+        imagePullPolicy: IfNotPresent
+        name: {{ .Values.deployment.name }}
+        ports:
+        - containerPort: {{ .Values.deployment.container_port }}
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.deployment.name }}
+  namespace: default
+spec:
+  loadBalancerIP: {{ .Values.deployment.ip_address }}
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: {{ .Values.deployment.http_port }}
+    - name: https
+      port: {{ .Values.deployment.https_port }}
+    - name: {{ .Values.deployment.name }}
+      port: {{ .Values.deployment.container_port }}
+  selector:
+    app: {{ .Values.deployment.name }}
+  
+  
