@@ -48,4 +48,4 @@ jobs:
         date > ./manifest/test.txt
         git add .
         git commit -m 'test.txt updated'
-        git push
+        git push https://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@github.com/Jaseel-Zizou/manifest.git
