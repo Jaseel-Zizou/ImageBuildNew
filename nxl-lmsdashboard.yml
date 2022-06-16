@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lmsdashboard-deployment
+  namespace: test
+spec:
+  selector:
+    matchLabels:
+      app: lmsdashboard
+  template:
+    metadata:
+      labels:
+        app: lmsdashboard
+    spec:
+      containers:
+      - image:  gcr.io/jaseel-study/lms-test/8775190c3615@sha256:29be08fc380030395599e808d22c802785433f4eb14ae30b8a7ad51ae8cd852c
+        imagePullPolicy: IfNotPresent
+        name: lmsdashboard
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lmsdashboard-service
+  namespace: test
+spec:
+  loadBalancerIP: 34.123.14.117
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 80
+    - name: https
+      port: 443
+    - name: tcp-app-port
+      port: 3000
+  selector:
+    app: lmsdashboard
