@@ -45,8 +45,6 @@ jobs:
       run: |-
         git config user.email 9744106258jaseel@gmail.com
         git config user.name Jaseel-Zizou
-        git clone https://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@github.com/Jaseel-Zizou/manifest.git
-        cd manifest
         date > test.txt
         git add .
         git commit -m 'test.txt updated'
