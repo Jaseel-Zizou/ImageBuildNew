@@ -11,6 +11,7 @@ jobs:
       IMAGE_NAME: ci-cd
       PROJECT_ID: jaseel-study
     steps:
+
     - name: Checkout
       uses: actions/checkout@v2
 
@@ -21,16 +22,18 @@ jobs:
         export_default_credentials: true
 
     - name: Build Docker Image
-      run: docker build -t $IMAGE_NAME:latest .
+      run: docker build -t $IMAGE_NAME:latest  --build-arg BRANCH=$(git rev-parse --abbrev-ref HEAD)  .
 
     - name: Automatic Tagging of Releases
       id: increment-git-tag
       run: |
         bash ./scripts/git_update.sh -v major
+
     - name: Configure Docker Client
       run: |-
         gcloud auth configure-docker --quiet
         gcloud auth configure-docker us-west2-docker.pkg.dev --quiet
+
     - name: Push Docker Image to Container Registry (GCR)
       env:
         GIT_TAG: ${{ steps.increment-git-tag.outputs.git-tag }}
