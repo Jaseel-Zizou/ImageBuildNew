@@ -13,7 +13,7 @@ spec:
         app: lmsdashboard
     spec:
       containers:
-      - image:  gcr.io/jaseel-study/ci-cd:latest
+      - image:  gcr.io/jaseel-study/ci-cd
         imagePullPolicy: IfNotPresent
         name: lmsdashboard
         ports:
