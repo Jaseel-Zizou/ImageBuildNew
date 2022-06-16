@@ -32,7 +32,7 @@ jobs:
         git commit -m "chore: my comment" 
       env:
         GITHUB_USERNAME: Jaseel-Zizou
-        GITHUB_EMAIL:9744106258jaseel@gmail.com
+        GITHUB_EMAIL: 9744106258jaseel@gmail.com
 
     - name: Push changes on REPO2
       uses: ad-m/github-push-action@master
