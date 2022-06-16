@@ -13,7 +13,7 @@ spec:
         app: lmsdashboard
     spec:
       containers:
-      - image:  gcr.io/jaseel-study/lms-test/8775190c3615@sha256:29be08fc380030395599e808d22c802785433f4eb14ae30b8a7ad51ae8cd852c
+        - image:  gcr.io/jaseel-study/lms-test:latest
         imagePullPolicy: IfNotPresent
         name: lmsdashboard
         ports:
